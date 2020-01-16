@@ -3,18 +3,24 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const [menuJson, setMenuJson] = useState({});
+  const [menuJson, setMenuJson] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://kitchen.kanttiinit.fi/restaurants/52/menu?day=2020-01-16&lang=en"
-    );
+    fetch("https://jsonplaceholder.typicode.com/photos")
+      .then(response => response.json())
+      .then(json => {
+        console.log(json.slice(0, 100));
+        setMenuJson(json.slice(0, 100));
+      });
   }, []);
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>Let's do an api request</p>
+        <p>Image gallery</p>
+        {menuJson.map(item => {
+          return <img src={item.thumbnailUrl} alt="Placholder" />;
+        })}
       </header>
     </div>
   );
