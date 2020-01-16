@@ -12,6 +12,7 @@
   min-width: 480px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .imageArray img {

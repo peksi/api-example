@@ -3,6 +3,16 @@ import "./App.css";
 
 function App() {
   const [menuJson, setMenuJson] = useState([]);
+  const [quote, setQuote] = useState("Click for a quote!");
+
+  const getNewQuote = () => {
+    fetch("https://api.kanye.rest")
+      .then(res => res.json())
+      .then(json => {
+        console.log(json.quote);
+        setQuote(json.quote);
+      });
+  };
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/photos")
@@ -16,7 +26,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Image gallery</p>
+        <p
+          onClick={() => {
+            getNewQuote();
+          }}
+        >
+          {quote}
+        </p>
         <div className="imageArray">
           {menuJson.map(item => {
             return (
