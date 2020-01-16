@@ -7,6 +7,16 @@
   pointer-events: none;
 }
 
+.nameRow {
+  margin-top: 4rem;
+}
+
+.nameRow input,
+.nameRow button {
+  font-size: 24px;
+  margin: 1rem;
+}
+
 .imageArray {
   width: 50%;
   min-width: 480px;

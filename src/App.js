@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import { Name } from "./Name.js";
 
 function App() {
   const [menuJson, setMenuJson] = useState([]);
@@ -26,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Name />
         <p
           onClick={() => {
             getNewQuote();
