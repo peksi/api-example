@@ -7,6 +7,19 @@
   pointer-events: none;
 }
 
+.imageArray {
+  width: 50%;
+  min-width: 480px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imageArray img {
+  margin: 5px;
+  padding: 0;
+  border: 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

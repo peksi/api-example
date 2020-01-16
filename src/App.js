@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
@@ -18,9 +17,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>Image gallery</p>
-        {menuJson.map(item => {
-          return <img src={item.thumbnailUrl} alt="Placholder" />;
-        })}
+        <div className="imageArray">
+          {menuJson.map(item => {
+            return (
+              <img key={item.id} src={item.thumbnailUrl} alt="Placholder" />
+            );
+          })}
+        </div>
       </header>
     </div>
   );
